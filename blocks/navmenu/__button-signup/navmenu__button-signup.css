@@ -1,0 +1,12 @@
+.navmenu__button-signup{
+    border: none;
+    padding: 0;
+    background-color: #202020;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    color: #FFFFFF;
+    margin-right: 30px;
+}

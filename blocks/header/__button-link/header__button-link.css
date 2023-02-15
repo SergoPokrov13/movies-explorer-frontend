@@ -1,0 +1,19 @@
+.header__button-link{
+    border: none;
+    padding: 0;
+    background: #303030;
+    border-radius: 10px;
+    min-width: 96px;
+    min-height: 36px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    color: #FFFFFF;
+    margin-right: 10px;
+}
+
+.header__button-link:last-child{
+    margin: 0;
+}

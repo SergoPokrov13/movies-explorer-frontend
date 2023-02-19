@@ -9,3 +9,11 @@
     letter-spacing: -0.04em;
     color: #FFFFFF;
 }
+
+@media screen and (max-width: 550px) {
+    .technologies__title{
+        margin: 60px 0 0;
+        font-size: 30px;
+        line-height: 36px;
+    }
+ }

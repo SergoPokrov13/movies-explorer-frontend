@@ -10,3 +10,11 @@
     width: 76px;
     border: 0;
 }
+
+@media screen and (max-width: 550px) {
+    .navmenu__button-signin{
+        font-size: 10px;
+        height: 26px;
+        width: 54px;
+    }
+ }

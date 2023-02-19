@@ -8,3 +8,17 @@
     color: #FFFFFF;
     mix-blend-mode: normal;
 }
+
+@media screen and (max-width: 800px) {
+    .student__age{
+        font-size: 12px;
+        line-height: 18px;
+    }
+ }
+
+ @media screen and (max-width: 550px) {
+    .student__age{
+        font-size: 11px;
+        line-height: 16px;
+    }
+ }

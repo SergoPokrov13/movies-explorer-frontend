@@ -7,3 +7,10 @@
     color: #FFFFFF;
     margin: 25px 0 0;
 }
+
+@media screen and (max-width: 550px) {
+    .info__subtitle-text{
+        font-size: 11px;
+        line-height: 16px;
+    }
+ }

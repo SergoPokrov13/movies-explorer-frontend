@@ -11,3 +11,14 @@
 .footer__text:last-child{
     margin: 0;
 }
+
+@media screen and (max-width: 550px) {
+    .footer__text{
+        order: 2;
+        margin: 0 0 12px;
+    }
+
+    .grey-text{
+        color: #8B8B8B;
+    }
+ }

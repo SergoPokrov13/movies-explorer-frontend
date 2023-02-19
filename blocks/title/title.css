@@ -10,3 +10,15 @@
     border-bottom: 1px solid #DADADA;
     margin: 0;
 }
+
+@media screen and (max-width: 550px) {
+    .title{
+        font-size: 18px;
+        line-height: 22px;
+        padding: 0 0 28px;
+    }
+
+    .black-line{
+        border-bottom: 1px solid #000000;
+    }
+ }

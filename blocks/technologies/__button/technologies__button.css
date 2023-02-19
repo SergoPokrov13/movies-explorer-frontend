@@ -19,3 +19,10 @@
 .technologies__button:last-child{
     margin: 0;
 }
+
+@media screen and (max-width: 550px) {
+    .technologies__button{
+        width: 85px;
+        margin: 0;
+    }
+ }

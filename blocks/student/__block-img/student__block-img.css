@@ -1,5 +1,14 @@
 .student__block-img{
-    max-width: 270px;
+    width: 270px;
     object-fit: cover;
     border-radius: 10px;
 }
+
+
+@media screen and (max-width: 550px) {
+    .student__block-img{
+        order: 1;
+        width: 270px;
+        height: 350px;
+    }
+ }

@@ -10,3 +10,12 @@
     letter-spacing: -0.04em;
     color: #FFFFFF;
 }
+
+@media screen and (max-width: 550px) {
+    .technologies__subtitle{
+        margin: 24px 0 0;
+        /* max-width: 292px; */
+        font-size: 11px;
+        line-height: 16px;
+    }
+ }

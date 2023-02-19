@@ -7,3 +7,10 @@
     line-height: 20px;
     color: #8B8B8B;
 }
+
+@media screen and (max-width: 550px) {
+    .student__title{
+        margin: 70px 0 40px;
+        font-size: 14px;
+    }
+ }

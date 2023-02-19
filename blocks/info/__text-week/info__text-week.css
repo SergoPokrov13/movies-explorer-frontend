@@ -9,3 +9,11 @@
 .white{
     color: #FFFFFF;
 }
+
+@media screen and (max-width: 550px) {
+    .info__text-week{
+        margin: 11px 0 0;
+        font-size: 11px;
+        line-height: 13px;
+    }
+ }

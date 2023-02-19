@@ -3,3 +3,12 @@
     display: flex;
     justify-content: center;
 }
+
+@media screen and (max-width: 550px) {
+    .technologies__buttons{
+        margin: 50px 0 0;
+        display: grid;
+        grid-template-columns: 85px 85px;
+        gap: 10px;
+    }
+ }

@@ -17,3 +17,13 @@
 .header__button-link:last-child{
     margin: 0;
 }
+
+@media screen and (max-width: 550px) {
+    .header__button-link{
+        border-radius: 6px;
+        min-width: 80px;
+        min-height: 26px;
+        font-size: 10px;
+        margin-right: 6px;
+    }
+ }

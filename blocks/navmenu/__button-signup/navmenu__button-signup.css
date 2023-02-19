@@ -10,3 +10,10 @@
     color: #FFFFFF;
     margin-right: 30px;
 }
+
+@media screen and (max-width: 550px) {
+    .navmenu__button-signup{
+        font-size: 10px;
+        margin-right: 14px;
+    }
+ }

@@ -1,0 +1,12 @@
+.title{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+    letter-spacing: -0.04em;
+    color: #FFFFFF;
+    padding: 0 0 23px;
+    border-bottom: 1px solid #DADADA;
+    margin: 0;
+}

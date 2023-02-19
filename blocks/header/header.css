@@ -1,6 +1,6 @@
 .header{
-    margin: 0;
-    min-width: 1200px;
+    margin: 75px auto 0;
+    max-width: 1200px;
     min-height: 500px;
     background: #272727;
     border-radius: 10px;

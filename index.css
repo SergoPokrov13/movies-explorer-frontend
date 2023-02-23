@@ -43,4 +43,95 @@
 @import url(./blocks/footer/__info/footer__info.css);
 @import url(./blocks/footer/__block/footer__block.css);
 @import url(./blocks/footer/__text/footer__text.css);
+@import url(./blocks/switch-button/switch-button.css);
 
+.navmenu__buttons{
+    display: flex;
+    align-items: center;
+}
+
+.navmenu__button-film{
+    border: none;
+    padding: 0;
+    background-color: #202020;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 18px;
+    color: #FFFFFF;
+    margin: 0 15px 0 40px;
+}
+
+.navmenu__button-likefilm{
+    border: none;
+    padding: 0;
+    background-color: #202020;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    color: #FFFFFF;
+}
+
+.navmenu__button-account{
+    background-color: #202020;
+    background-image: url(./images/account.svg);
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 32px;
+    border: none;
+    padding: 0;
+}
+
+.search{
+    margin: 140px auto;
+    max-width: 1140px;
+}
+
+.search__block-search{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0 13px 0;
+    border-bottom: 1px solid #424242;
+}
+
+.search__input{
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 34px;
+    color: #8B8B8B;
+    outline:none;
+}
+
+.search__button-search{
+    width: 80px;
+    height: 34px;
+    border: none;
+    padding: 0;
+    background-image: url(./images/search.svg);
+    background-color: #202020;
+    background-repeat: no-repeat;
+}
+
+.search__block-switch{
+    display: flex;
+    justify-content: left;
+    margin: 35px 0 0 0;
+}
+
+.search__text{
+    margin: 0 0 0 14px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    color: #FFFFFF;
+}

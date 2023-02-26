@@ -3,6 +3,7 @@
 @import url(./blocks/page/page.css);
 @import url(./blocks/root/root.css);
 @import url(./blocks/button/button.css);
+@import url(./blocks/logo/logo.css);
 @import url(./blocks/navmenu/navmenu.css);
 @import url(./blocks/navmenu/__button-signup/navmenu__button-signup.css);
 @import url(./blocks/navmenu/__button-signin/navmenu__button-signin.css);
@@ -74,154 +75,13 @@
 @import url(./blocks/edit/edit.css);
 @import url(./blocks/edit/__button-edit/edit__button-edit.css);
 @import url(./blocks/edit/__button-exit/edit__button-exit.css);
-
-.logo{
-    max-width: 38px;
-}
-
-.register{
-    max-width: 396px;
-    margin: 70px auto 70px;
-}
-
-@media screen and (max-width: 800px) {
-    .register{
-        margin: 240px auto 0;
-    }
- }
-
-.register__text{
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 29px;
-    color: #FFFFFF;
-    margin: 40px 0 0;
-}
-
-.form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 20px 0 0;
-}
-
-@media screen and (max-width: 450px) {
-    .form{
-        margin: 80px 0 0;
-    }
- }
-
-.form__input-block{
-    margin: 20px 0 0;
-    
-}
-
-.form__input-name{
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 10px;
-    line-height: 12px;
-    color: #8B8B8B;
-    margin: 0 0 10px 0;
-}
-
-.input{
-    width: 366px;
-    background: #2F2F2F;
-    border-radius: 8px;
-    padding: 0;
-    border: none;
-    padding: 15px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 13px;
-    line-height: 16px;
-    color: #FFFFFF;
-    outline:none;
-}
-
-@media screen and (max-width: 450px) {
-    .input{
-        width: 230px;
-    }
- }
-
-.form__button-submit{
-    margin: 70px 0 0;
-    width: 396px;
-    height: 45px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 17px;
-    text-align: center;
-    color: #FFFFFF;
-    background: #4285F4;
-    border-radius: 3px;
-    border: none;
-}
-
-.signin{
-    margin: 160px 0 0;
-}
-
-@media screen and (max-width: 450px) {
-    .form__button-submit{
-        margin: 150px 0 0;
-        width: 260px;
-    }
-
-    .signin{
-        margin: 267px 0 0;
-    }
- }
-
-.form__text{
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 17px;
-    text-align: center;
-    color: #8B8B8B;
-    margin: 16px 0 0;
-}
-
-@media screen and (max-width: 450px) {
-    .form__text{
-        font-size: 12px;
-        line-height: 15px;
-    }
- }
-
-.form__link{
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 17px;
-    text-align: center;
-    color: #4285F4;
-    text-decoration: none;
-    margin: 0;
-}
-
-@media screen and (max-width: 450px) {
-    .form__link{
-        font-size: 12px;
-        line-height: 15px;
-    }
- }
-
-@media screen and (max-width: 450px) {
-    .register__block{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
- }
+@import url(./blocks/register/register.css);
+@import url(./blocks/register/__text/register__text.css);
+@import url(./blocks/form/form.css);
+@import url(./blocks/form/__input-block/form__input-block.css);
+@import url(./blocks/form/__input-name/form__input-name.css);
+@import url(./blocks/form/__input/form__input.css);
+@import url(./blocks/form/__button-submit/form__button-submit.css);
+@import url(./blocks/form/__text/form__text.css);
+@import url(./blocks/form/__link/form__link.css);
+@import url(./blocks/form/__block/register__block.css);

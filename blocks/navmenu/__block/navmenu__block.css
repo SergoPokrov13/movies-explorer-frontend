@@ -1,0 +1,14 @@
+.navmenu__block{
+    max-width: 1140px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media screen and (max-width: 1200px) {
+    .navmenu__block{
+        margin: 0 20px;
+    }
+ }

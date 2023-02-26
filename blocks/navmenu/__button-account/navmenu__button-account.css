@@ -1,0 +1,9 @@
+.navmenu__button-account{
+    background-color: #202020;
+    background-image: url(../../../images/account.svg);
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 32px;
+    border: none;
+    padding: 0;
+}

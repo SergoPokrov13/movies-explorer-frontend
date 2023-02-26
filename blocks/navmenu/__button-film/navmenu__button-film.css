@@ -1,0 +1,12 @@
+.navmenu__button-film{
+    border: none;
+    padding: 0;
+    background-color: #202020;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 18px;
+    color: #FFFFFF;
+    margin: 0 15px 0 40px;
+}

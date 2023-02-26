@@ -1,0 +1,13 @@
+.cards__button-next{
+    background: #202020;
+    border: 1px solid #424242;
+    width: 320px;
+    height: 35px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FFFFFF;
+    margin:0;
+}

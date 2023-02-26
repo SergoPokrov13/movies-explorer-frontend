@@ -5,6 +5,12 @@
     height: 20px;
 }
 
+@media screen and (max-width: 590px) {
+  .switch {
+    order: 2;
+}
+}
+
 .switch input {display:none;}
 
 .slider {

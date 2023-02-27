@@ -12,16 +12,22 @@
 <body class="page">
   <div class="root">
     <div class="navmenu">
-        <div class="navmenu__block">
-            <div class="navmenu__block-image">
-            <img class="logo" src="./images/logo.svg" alt="Логотип">
-                <div class="navmenu__buttons">
-                    <button class="navmenu__button-film button" type="button">Фильмы</button>
-                </div>
-            </div>
-        <button class="navmenu__button-account button" type="button"></button>
-        </div>
-    </div>
+      <div class="navmenu__block">
+          <div class="navmenu__block-image">
+          <img class="logo" src="./images/logo.svg" alt="Логотип">
+          <div class="navmenu__burger">
+              <span class="span"></span>
+          </div>
+              <div class="navmenu__buttons">
+                  <div class="navmenu__links">
+                      <button class="navmenu__button-glav button" type="button">Главная</button>
+                      <button class="navmenu__button-film button line" type="button">Фильмы</button>
+                      </div>
+                  <button class="navmenu__button-account button" type="button"></button>
+              </div>
+          </div>
+      </div>
+  </div>
     <main class="main">
       <section class="search">
         <div class="search__block-search">
@@ -139,6 +145,8 @@
       </div>
     </footer>
   </div>
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+  <script src="./script.js"></script>
 </body>
 
 </html>

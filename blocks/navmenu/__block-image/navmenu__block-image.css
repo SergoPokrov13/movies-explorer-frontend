@@ -1,4 +1,15 @@
 .navmenu__block-image{
+    width: 100%;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
+
+@media screen and (max-width: 769px) {
+    .navmenu__block-image{
+        width: 100%;
+        /* position: relative;
+        padding: 0;
+        overflow: auto; */
+    }
+ }

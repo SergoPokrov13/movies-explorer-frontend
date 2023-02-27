@@ -1,15 +1,6 @@
 .navmenu__buttons{
+    width: 100%;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    max-width: 100%;
 }
-
-@media screen and (max-width: 769px) {
-    .navmenu__buttons{
-        display: none;
-    }
- }
-
- .no-swap{
-    display: flex;
- }

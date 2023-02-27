@@ -15,12 +15,18 @@
         <div class="navmenu__block">
             <div class="navmenu__block-image">
             <img class="logo" src="./images/logo.svg" alt="Логотип">
+            <div class="navmenu__burger">
+                <span class="span"></span>
+            </div>
                 <div class="navmenu__buttons">
-                    <button class="navmenu__button-film button" type="button">Фильмы</button>
-                    <button class="navmenu__button-likefilm button" type="button">Сохранённые фильмы</button>
+                    <div class="navmenu__links">
+                        <button class="navmenu__button-glav button line" type="button">Главная</button>
+                        <button class="navmenu__button-film button" type="button">Фильмы</button>
+                        <button class="navmenu__button-likefilm button" type="button">Сохранённые фильмы</button>
+                        </div>
+                    <button class="navmenu__button-account button" type="button"></button>
                 </div>
             </div>
-        <button class="navmenu__button-account button" type="button"></button>
         </div>
     </div>
     <main class="main">
@@ -43,6 +49,8 @@
         </section>
     </main>
   </div>
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+  <script src="./script.js"></script>
 </body>
 
 </html>

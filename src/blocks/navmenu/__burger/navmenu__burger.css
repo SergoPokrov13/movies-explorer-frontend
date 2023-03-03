@@ -1,0 +1,131 @@
+.navmenu__burger{
+    display: none;
+    z-index: 20;
+}
+
+@media screen and (max-width: 769px){
+    body.lock{
+        overflow: hidden;
+    }
+    .navmenu__burger{
+        position: relative;
+        display: block;
+        width: 30px;
+        height: 20px;
+
+    }
+
+    .span{
+        position: absolute;
+        background: #FFFFFF;
+        width: 100%;
+        height: 3px;
+        top: 9px;
+        right: 0;
+    }
+
+    .span.active{
+        transform: scale(0);
+    }
+
+    .navmenu__burger::before,
+    .navmenu__burger::after
+    {
+        content: '';
+        position: absolute;
+        background: #FFFFFF;
+        width: 100%;
+        height: 3px;
+        transition: all 0.3s ease 0.1s;
+    }
+
+    .navmenu__burger::before{
+        top: 0;
+    }
+
+    .navmenu__burger::after{
+        bottom: 0;
+    }
+
+    .navmenu__burger.active::before{
+        transform: rotate(45deg);
+        top: 9px;
+    }
+
+    .navmenu__burger.active::after{
+        transform: rotate(-45deg);
+        bottom: 9px;
+    }
+
+    .navmenu__buttons{
+        background-color: #202020;
+        position: fixed;
+        flex-direction: column;
+        justify-content: none;
+        padding: 150px 0 0;
+        top: -100%;
+        opacity: 1;
+        width: 68%;
+    }
+
+    .logo.active{
+        opacity: 0.3;
+    }
+
+    .main.active{
+        opacity: 0.3;
+    }
+
+    .navmenu__links{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .no-swap{
+        flex-direction: row;
+     }
+
+    .line{
+        border-bottom: solid 2px #FFFFFF;
+    }
+
+    .navmenu__button-glav{
+        display: flex;
+    }
+
+    .navmenu__button-likefilm{
+        margin: 22px 0 0;
+        font-weight: 500;
+    }
+
+    .navmenu__button-film{
+        margin: 22px 0 0;
+    }
+
+    .navmenu__button-account{
+        position: fixed;
+        display: none;
+        z-index: 20;
+    }
+
+    .navmenu__button-account.active{
+        display: flex;
+        bottom: 0;
+        padding: 0 0 90px;
+    }
+
+    .navmenu__buttons.active{
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 68%;
+        transition: all 0.3s ease 0s;
+    }
+}
+
+@media screen and (max-width: 450px){
+    .navmenu__buttons.active{
+        width: 100%;
+    }
+}

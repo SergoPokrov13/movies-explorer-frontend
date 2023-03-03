@@ -1,0 +1,23 @@
+.portfolio__web_name{
+    margin: 0 0 19px 0;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 50px;
+    letter-spacing: -0.04em;
+    color: #FFFFFF;
+}
+
+@media screen and (max-width: 800px) {
+    .portfolio__web_name{
+        font-size: 28px;
+    } 
+ }
+
+ @media screen and (max-width: 550px) {
+    .portfolio__web_name{
+        font-size: 18px;
+        line-height: 18px;
+    } 
+ }

@@ -1,8 +1,0 @@
-.logo{
-    max-width: 38px;
-    z-index: 100;
-}
-
-.logo.active{
-    opacity: 0.3;
-}

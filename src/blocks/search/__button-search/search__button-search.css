@@ -1,0 +1,9 @@
+.search__button-search{
+    width: 80px;
+    height: 34px;
+    border: none;
+    padding: 0;
+    background-image: url(../../../images/search.svg);
+    background-color: #202020;
+    background-repeat: no-repeat;
+}

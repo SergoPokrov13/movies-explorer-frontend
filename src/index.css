@@ -89,3 +89,7 @@
 @import url(./blocks/form/__block/register__block.css);
 @import url(./blocks/navmenu/__button-glav/navmenu__button-glav.css);
 @import url(./blocks/navmenu/__burger/navmenu__burger.css);
+@import url(./blocks/page404/page404.css);
+@import url(./blocks/page404/__title/page404__title.css);
+@import url(./blocks/page404/__subtitle/page404__subtitle.css);
+@import url(./blocks/page404/__link/page404__link.css);

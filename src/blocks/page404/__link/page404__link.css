@@ -1,0 +1,18 @@
+.page404__link{
+    margin: 180px 0 0;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #4285F4;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 500px) {
+    .page404__link{
+        font-size: 12px;
+        line-height: 15px;
+    }
+ }

@@ -1,3 +1,4 @@
+import React from 'react';
 function FilterCheckbox() {
     return (
         <div className="search__block-switch">

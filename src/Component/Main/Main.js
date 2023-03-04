@@ -1,3 +1,4 @@
+import React from 'react';
 import NavigationMain from "../NavigationMain/NavigationMain"
 import Promo from "./Promo/Promo";
 import Techs from "./Techs/Techs";

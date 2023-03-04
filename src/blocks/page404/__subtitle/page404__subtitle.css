@@ -1,0 +1,17 @@
+.page404__subtitle{
+    margin: 5px 0 0;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+@media screen and (max-width: 500px) {
+    .page404__subtitle{
+        font-size: 12px;
+        line-height: 15px;
+    }
+ }

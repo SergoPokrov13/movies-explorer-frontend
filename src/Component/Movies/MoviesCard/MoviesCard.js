@@ -1,3 +1,4 @@
+import React from 'react';
 import card from "../../../images/card.png"
 
 function MoviesCard() {

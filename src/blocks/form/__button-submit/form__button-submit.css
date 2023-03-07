@@ -1,0 +1,30 @@
+.form__button-submit{
+    margin: 70px 0 0;
+    width: 396px;
+    height: 45px;
+    font-family: 'Inter', ‘Arial’, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #FFFFFF;
+    background: #4285F4;
+    border-radius: 3px;
+    border: none;
+}
+
+.signin{
+    margin: 160px 0 0;
+}
+
+@media screen and (max-width: 450px) {
+    .form__button-submit{
+        margin: 150px 0 0;
+        width: 260px;
+    }
+
+    .signin{
+        margin: 267px 0 0;
+    }
+ }

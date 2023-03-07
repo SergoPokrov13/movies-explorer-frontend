@@ -1,0 +1,20 @@
+.navmenu__button-signin{
+    font-family: 'Inter', ‘Arial’, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    background: #3DDC84;
+    border-radius: 3px;
+    height: 32px;
+    width: 76px;
+    border: 0;
+}
+
+@media screen and (max-width: 550px) {
+    .navmenu__button-signin{
+        font-size: 10px;
+        height: 26px;
+        width: 54px;
+    }
+ }

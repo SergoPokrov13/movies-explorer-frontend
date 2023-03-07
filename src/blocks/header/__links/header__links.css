@@ -1,0 +1,17 @@
+.header__links{
+    position: absolute;
+    display: flex;
+    bottom: 30px;
+}
+
+@media screen and (max-width: 800px) {
+    .header__links{
+        bottom: 16px;
+    }
+ }
+
+@media screen and (max-width: 550px) {
+    .header__links{
+        bottom: 16px;
+    }
+ }

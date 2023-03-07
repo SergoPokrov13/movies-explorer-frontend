@@ -1,0 +1,33 @@
+.header__button-link{
+    border: none;
+    padding: 0;
+    background: #303030;
+    border-radius: 10px;
+    min-width: 96px;
+    min-height: 36px;
+    font-family: 'Inter', ‘Arial’, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    color: #FFFFFF;
+    margin-right: 10px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__button-link:last-child{
+    margin: 0;
+}
+
+@media screen and (max-width: 550px) {
+    .header__button-link{
+        border-radius: 6px;
+        min-width: 80px;
+        min-height: 26px;
+        font-size: 10px;
+        margin-right: 6px;
+    }
+ }

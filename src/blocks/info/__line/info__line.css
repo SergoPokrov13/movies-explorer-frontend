@@ -1,0 +1,16 @@
+.info__line{
+    margin: 110px 0 0;
+    display: flex;
+}
+
+@media screen and (max-width: 800px) {
+    .info__line{
+        margin: 80px 0 0;
+    }
+ }
+
+@media screen and (max-width: 550px) {
+    .info__line{
+        margin: 45px 0 0;
+    }
+ }

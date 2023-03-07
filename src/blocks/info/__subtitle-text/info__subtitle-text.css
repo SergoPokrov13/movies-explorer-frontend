@@ -1,0 +1,16 @@
+.info__subtitle-text{
+    font-family: 'Inter', ‘Arial’, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #FFFFFF;
+    margin: 25px 0 0;
+}
+
+@media screen and (max-width: 550px) {
+    .info__subtitle-text{
+        font-size: 11px;
+        line-height: 16px;
+    }
+ }

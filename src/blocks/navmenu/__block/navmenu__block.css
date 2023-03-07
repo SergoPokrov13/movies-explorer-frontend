@@ -1,0 +1,21 @@
+.navmenu__block{
+    max-width: 1140px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+@media screen and (max-width: 1140px) {
+    .navmenu__block{
+        margin: 0 29px;
+    }
+ }
+
+ @media screen and (max-width: 550px) {
+    .navmenu__block{
+        margin: 0 18px;
+    }
+ }

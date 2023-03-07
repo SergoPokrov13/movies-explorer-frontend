@@ -1,0 +1,17 @@
+.info{
+    margin:0 auto;
+    padding: 110px 0;
+    max-width: 1140px;
+}
+
+@media screen and (max-width: 800px) {
+    .info{
+        padding: 110px 31px;
+    }
+ }
+
+@media screen and (max-width: 550px) {
+    .info{
+        padding: 70px 10px;
+    }
+ }

@@ -1,0 +1,21 @@
+.technologies{
+    margin: 10px 0 0;
+    background: #272727;
+    padding: 100px 70px;
+    border-radius: 2px;
+}
+
+@media screen and (max-width: 800px) {
+    .technologies{
+        padding: 70px 30px;
+    }
+ }
+
+
+ @media screen and (max-width: 550px) {
+    .technologies{
+        margin: 72px 0;
+        padding:0;
+        background: none;
+    }
+ }

@@ -1,0 +1,7 @@
+@media screen and (max-width: 450px) {
+    .register__block{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+ }

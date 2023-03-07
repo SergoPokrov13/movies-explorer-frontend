@@ -1,0 +1,12 @@
+.card__icon{
+    position: absolute;
+    right: 14px;
+    top: 14px;
+    width: 21px;
+    height: 21px;
+    display: none;
+}
+
+.card__icon.active{
+    display: block;
+}

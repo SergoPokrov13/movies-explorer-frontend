@@ -1,0 +1,16 @@
+.info__block{
+    max-width: 550px;
+}
+
+@media screen and (max-width: 800px) {
+    .info__block{
+        max-width: 320px;
+    }
+ }
+
+ @media screen and (max-width: 650px) {
+    .info__block{
+        max-width: 284px;
+        margin: 55px 0 0;
+    }
+ }

@@ -1,0 +1,11 @@
+.info__block-backround{
+    width: 100%;
+    height: 36px;
+    background: #3DDC84;
+    text-align: center;
+    margin: 0;
+}
+
+.black{
+    background: #303030;
+}

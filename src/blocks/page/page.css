@@ -1,0 +1,10 @@
+.page{
+    padding: 0 20px 0 20px;
+    background-color: #202020;
+}
+
+@media screen and (max-width: 340px) {
+    .page{
+        padding: 0 10px 0 10px;
+    }
+}

@@ -1,0 +1,19 @@
+.navmenu__button-likefilm{
+    border: none;
+    padding: 0;
+    background-color: #202020;
+    font-family: 'Inter', ‘Arial’, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 800px) {
+    .navmenu__button-likefilm{
+        font-size: 18px;
+        line-height: 22px;
+    } 
+ }

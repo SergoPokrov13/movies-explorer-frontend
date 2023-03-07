@@ -7,7 +7,7 @@
 
 @media screen and (max-width: 800px) {
     .technologies{
-        padding: 90px 60px;
+        padding: 70px 30px;
     }
  }
 
@@ -15,7 +15,7 @@
  @media screen and (max-width: 550px) {
     .technologies{
         margin: 70px 0 0;
-        padding: 70px 0;
+        padding: 55px 0;
         background: none;
     }
  }

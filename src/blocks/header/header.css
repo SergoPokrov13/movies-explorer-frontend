@@ -1,7 +1,7 @@
 .header{
     margin: 70px auto 0;
     max-width: 1200px;
-    min-height: 500px;
+    min-height: 517px;
     background: #272727;
     border-radius: 10px;
     display: flex;
@@ -13,12 +13,12 @@
 
 @media screen and (max-width: 800px) {
     .header{
-        min-height: 830px;
+        min-height: 840px;
     }
  }
 
  @media screen and (max-width: 550px) {
     .header{
-        min-height: 585px;
+        min-height: 600px;
     }
  }

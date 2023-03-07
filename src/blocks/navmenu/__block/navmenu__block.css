@@ -8,8 +8,14 @@
     position: relative;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1140px) {
     .navmenu__block{
-        margin: 0 20px;
+        margin: 0 29px;
+    }
+ }
+
+ @media screen and (max-width: 550px) {
+    .navmenu__block{
+        margin: 0 18px;
     }
  }

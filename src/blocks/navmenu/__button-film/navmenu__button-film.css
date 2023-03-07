@@ -9,4 +9,12 @@
     line-height: 18px;
     color: #FFFFFF;
     margin: 0 15px 0 40px;
-}
+    text-decoration: none;
+} 
+
+@media screen and (max-width: 800px) {
+    .navmenu__button-film{
+        font-size: 18px;
+        line-height: 22px;
+    } 
+ }

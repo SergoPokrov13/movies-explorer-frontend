@@ -6,7 +6,7 @@ function Login() {
     return (
         <section className="register">
           <div className="register__block">
-            <img className="logo" src={logo} alt="Логотип"/>
+            <Link to="/"><img className="logo" src={logo} alt="Логотип"/></Link>
             <h2 className="register__text">Рады видеть!</h2>
             </div>
             <form className="form" action="">

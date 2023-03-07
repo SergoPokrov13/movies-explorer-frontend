@@ -1,5 +1,5 @@
 .student__about{
-    margin: 26px 0 100px 0;
+    margin: 26px 0 140px 0;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
@@ -10,7 +10,7 @@
 
 @media screen and (max-width: 800px) {
     .student__about{
-        margin: 26px 0 85px 0;
+        margin: 26px 0 135px 0;
         font-size: 12px;
         line-height: 18px;
     }
@@ -18,7 +18,7 @@
 
  @media screen and (max-width: 550px) {
     .student__about{
-        margin: 20px 0 40px 0;
+        margin: 20px 0 100px 0;
         font-size: 11px;
         line-height: 16px;
     }

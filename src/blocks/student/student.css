@@ -3,8 +3,14 @@
     max-width: 1140px;
 }
 
+@media screen and (max-width: 770px) {
+    .student{
+        margin: 110px 30px;
+    }
+ }
+
 @media screen and (max-width: 550px) {
     .student{
-        margin: 70px auto;
+        margin: 75px auto;
     }
  }

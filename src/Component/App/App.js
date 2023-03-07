@@ -1,13 +1,13 @@
 import React from 'react';
 import { Route, Switch } from "react-router-dom";
 
-import Main from "./Component/Main/Main.js"
-import Movies from "./Component/Movies/Movies.js";
-import SavedMovies from "./Component/SavedMovies/SavedMovies.js";
-import Register from "./Component/Register/Register.js";
-import Login from "./Component/Login/Login.js";
-import Profile from "./Component/Profile/Profile.js";
-import Page404 from './Component/Page404/Page404.js';
+import Main from "../Main/Main.js"
+import Movies from "../Movies/Movies.js";
+import SavedMovies from "../SavedMovies/SavedMovies.js";
+import Register from "../Register/Register.js";
+import Login from "../Login/Login.js";
+import Profile from "../Profile/Profile.js";
+import Page404 from '../Page404/Page404.js';
 
 function App() {
   return (

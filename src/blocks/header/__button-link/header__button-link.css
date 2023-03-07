@@ -12,6 +12,10 @@
     line-height: 16px;
     color: #FFFFFF;
     margin-right: 10px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .header__button-link:last-child{

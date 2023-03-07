@@ -3,8 +3,14 @@
     max-width: 1140px;
 }
 
+@media screen and (max-width: 800px) {
+    .info{
+        margin: 110px 31px;
+    }
+ }
+
 @media screen and (max-width: 550px) {
     .info{
-        margin: 70px auto;
+        margin: 70px 10px;
     }
  }

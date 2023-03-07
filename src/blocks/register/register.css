@@ -1,6 +1,7 @@
 .register{
     max-width: 396px;
     margin: 70px auto 70px;
+    padding: 0 0 30px;
 }
 
 @media screen and (max-width: 800px) {

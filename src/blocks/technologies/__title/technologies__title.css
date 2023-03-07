@@ -10,6 +10,12 @@
     color: #FFFFFF;
 }
 
+@media screen and (max-width: 800px) {
+    .technologies__title{
+        margin: 80px 0 0;
+    }
+ }
+
 @media screen and (max-width: 550px) {
     .technologies__title{
         margin: 60px 0 0;

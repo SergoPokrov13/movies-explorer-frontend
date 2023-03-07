@@ -8,7 +8,7 @@
     color: #FFFFFF;
     text-align: center;
     letter-spacing: -0.04em;
-    margin: 0;
+    margin: -43px 26px 0 0;
 }
 
 @media screen and (max-width: 800px) {
@@ -16,6 +16,7 @@
         max-width: 680px;
         font-size: 40px;
         line-height: 52px;
+        margin: 22px 3px 0 0;
     }
  }
 
@@ -24,5 +25,6 @@
         max-width: 290px;
         font-size: 29px;
         line-height: 37px;
+        margin: -15px 0px 0 0;
     }
  }

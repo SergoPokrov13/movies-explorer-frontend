@@ -8,7 +8,7 @@
 @media screen and (max-width: 550px) {
     .student__block-img{
         order: 1;
-        width: 270px;
+        width: 280px;
         height: 350px;
     }
  }

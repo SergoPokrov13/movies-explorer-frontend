@@ -8,4 +8,12 @@
     font-size: 13px;
     line-height: 18px;
     color: #FFFFFF;
+    text-decoration: none;
 }
+
+@media screen and (max-width: 800px) {
+    .navmenu__button-likefilm{
+        font-size: 18px;
+        line-height: 22px;
+    } 
+ }

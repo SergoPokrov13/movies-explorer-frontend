@@ -12,7 +12,7 @@ function Navigation() {
         document.querySelector('.navmenu__button-account').classList.toggle('active');
     }
     return (
-        <div className="navmenu">
+        <nav className="navmenu">
         <div className="navmenu__block">
             <div className="navmenu__block-image">
             <Link to="/"><img className="logo" src={logo} alt="Логотип"/></Link>
@@ -21,15 +21,15 @@ function Navigation() {
             </div>
                 <div className="navmenu__buttons">
                     <div className="navmenu__links">
-                        <Link to="/"><button className="navmenu__button-glav button" type="button">Главная</button></Link>
-                        <Link to="/movies"><button className="navmenu__button-film button line" type="button">Фильмы</button></Link>
-                        <Link to="/saved-movies"><button className="navmenu__button-likefilm  button" type="button">Сохранённые фильмы</button></Link>
+                        <Link to="/" className="navmenu__button-glav button" type="button">Главная</Link>
+                        <Link to="/movies" className="navmenu__button-film button" type="button">Фильмы</Link>
+                        <Link to="/saved-movies" className="navmenu__button-likefilm  button" type="button">Сохранённые фильмы</Link>
                     </div>
-                        <Link to="/profile"><button className="navmenu__button-account button" type="button"></button></Link>
+                        <Link to="/profile" className="navmenu__button-account button" type="button"></Link>
                 </div>
             </div>
         </div>
-    </div>
+    </nav>
     );
   }
   

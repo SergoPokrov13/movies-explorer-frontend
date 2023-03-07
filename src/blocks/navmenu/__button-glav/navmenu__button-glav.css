@@ -10,4 +10,12 @@
     color: #FFFFFF;
     margin: 0;
     display: none;
+    text-decoration: none;
 }
+
+@media screen and (max-width: 800px) {
+    .navmenu__button-glav{
+        font-size: 18px;
+        line-height: 22px;
+    } 
+ }

@@ -68,6 +68,7 @@
 @import url(./blocks/card/__time/card__time.css);
 @import url(./blocks/card/__block/cards__block.css);
 @import url(./blocks/card/__button-next/cards__button-next.css);
+@import url(./blocks/card/__icon/card__icon.css);
 @import url(./blocks/account/account.css);
 @import url(./blocks/account/__name/account__name.css);
 @import url(./blocks/account/__info/account__info.css);

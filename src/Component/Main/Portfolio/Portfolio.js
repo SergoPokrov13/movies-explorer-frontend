@@ -1,22 +1,23 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import link from "../../../images/link.svg";
 
 function Portfolio() {
     return (
             <section className="portfolio">
                 <p className="portfolio__title">Портфолио</p>
-                <div className="portfolio__web">
+                <Link className="portfolio__web button">
                     <p className="portfolio__web_name">Статичный сайт</p>
-                    <a className="portfolio__web_link button" href="/#"><img src={link} alt=""/></a>
-                </div>
-                <div className="portfolio__web">
+                    <img className="portfolio__web_link" src={link} alt=""/>
+                </Link>
+                <Link className="portfolio__web button">
                     <p className="portfolio__web_name">Адаптивный сайт</p>
-                    <a className="portfolio__web_link button" href="/#"><img src={link} alt=""/></a>
-                </div>
-                <div className="portfolio__web">
+                    <img className="portfolio__web_link" src={link} alt=""/>
+                </Link>
+                <Link className="portfolio__web button">
                     <p className="portfolio__web_name">Одностраничное приложение</p>
-                    <a className="portfolio__web_link button" href="/#"><img src={link} alt=""/></a>
-                </div>
+                    <img className="portfolio__web_link" src={link} alt=""/>
+                </Link>
             </section>
     );
   }

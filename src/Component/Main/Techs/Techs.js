@@ -1,7 +1,7 @@
 import React from 'react';
 function Techs() {
   return (
-        <section className="technologies">
+        <section className="technologies" id='techs'>
             <h2 className="title black-line">Технологии</h2>
             <p className="technologies__title">7 технологий</p>
             <p className="technologies__subtitle">На курсе веб-разработки мы освоили технологии, которые применили в дипломном проекте.</p>

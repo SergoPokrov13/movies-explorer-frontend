@@ -6,3 +6,15 @@
     margin: 30px 0 0;
     text-decoration: none;
 }
+
+@media screen and (max-width: 770px) {
+    .portfolio__web{
+        margin: 20px 0 0;
+    }
+ }
+
+ @media screen and (max-width: 550px) {
+    .portfolio__web{
+        margin: 25px 0 0;
+    }
+ }

@@ -1,5 +1,5 @@
 .technologies{
-    margin: 110px 0 0;
+    margin: 10px 0 0;
     background: #272727;
     padding: 100px 70px;
     border-radius: 2px;
@@ -14,8 +14,8 @@
 
  @media screen and (max-width: 550px) {
     .technologies{
-        margin: 70px 0 0;
-        padding: 55px 0;
+        margin: 72px 0;
+        padding:0;
         background: none;
     }
  }

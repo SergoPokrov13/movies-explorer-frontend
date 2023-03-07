@@ -1,16 +1,17 @@
 .info{
-    margin: 110px auto;
+    margin:0 auto;
+    padding: 110px 0;
     max-width: 1140px;
 }
 
 @media screen and (max-width: 800px) {
     .info{
-        margin: 110px 31px;
+        padding: 110px 31px;
     }
  }
 
 @media screen and (max-width: 550px) {
     .info{
-        margin: 70px 10px;
+        padding: 70px 10px;
     }
  }

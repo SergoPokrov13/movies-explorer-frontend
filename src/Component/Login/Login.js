@@ -20,7 +20,7 @@ function Login() {
               </div>
               <div className="register__block">
                 <button className="form__button-submit button signin" type="submit">Войти</button>
-                <p className="form__text">Ещё не зарегистрированы? <Link to="signup"><a className="form__link button" href="/#">Регистрация</a></Link></p>
+                <p className="form__text">Ещё не зарегистрированы? <Link to="signup"className="form__link button" href="/#">Регистрация</Link></p>
               </div>
             </form>
         </section>

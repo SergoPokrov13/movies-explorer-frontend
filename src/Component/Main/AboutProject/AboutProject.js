@@ -1,7 +1,7 @@
 import React from 'react';
 function AboutProject() {
     return (
-            <section className="info">
+            <section className="info" id='info'>
                 <h2 className="title">О проекте</h2>
                 <div className="info__columns">
                     <div className="info__block">

@@ -7,10 +7,10 @@ import Footer from "../Footer/Footer";
 function Movies() {
     return (
         <div className="Movies">
-            <Navigation/>
+            <Navigation />
             <main className="main">
             <SearchForm/>
-            <MoviesCardList/>
+            <MoviesCardList />
             </main>
             <Footer/>
         </div>

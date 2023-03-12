@@ -15,12 +15,14 @@ import { useEffect, useState } from 'react';
 
 function App() {
 
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(true);
   const [currentUser, setCurrentUser] = useState({});
+  const [isReady, setIsReady] = useState(false);
 
   const history = useHistory();
 
   useEffect(() => {
+    setIsReady(false);
     mainApi.getUserInfo()
       .then(user => {
         if (user) {
@@ -28,7 +30,8 @@ function App() {
           setLoggedIn(true);
         }
       })
-      .catch(console.log);
+      .catch(console.log)
+      .finally(() => setIsReady(true));
   }, [loggedIn]);
 
   function handleRegister({ name, email, password }) {
@@ -72,23 +75,24 @@ function App() {
     <div className="App">
       <div className="page">
       <div className="root">
-      <CurrentUserContext.Provider value={currentUser} >
+      {isReady
+       ? <CurrentUserContext.Provider value={currentUser} >
         <Switch>
         <Route exact path="/">
         <Main loggedIn={loggedIn} />
         </Route>
 
         <ProtectedRoute
-            path="/movies"
-            component={Movies}
-            loggedIn={loggedIn}
-          />
+              path="/movies"
+              component={Movies}
+              loggedIn={loggedIn}
+            />
 
-        <ProtectedRoute
-            path="/saved-movies"
-            component={SavedMovies}
-            loggedIn={loggedIn}
-          />
+            <ProtectedRoute
+              path="/saved-movies"
+              component={SavedMovies}
+              loggedIn={loggedIn}
+            />
         
         <ProtectedRoute
             exact
@@ -111,6 +115,8 @@ function App() {
         </Route>
         </Switch>
       </CurrentUserContext.Provider>
+              : ''
+      }
       </div>
       </div>
     </div>

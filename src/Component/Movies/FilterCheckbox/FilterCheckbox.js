@@ -1,13 +1,22 @@
 import React from 'react';
-function FilterCheckbox() {
+function FilterCheckbox({ name, checked, onChange, label = '' }) {
     return (
-        <div className="search__block-switch">
+        <form className="search__block-switch">
           <label className="switch">
-            <input type="checkbox" defaultChecked readOnly/>
-            <span className="slider round"></span>
+            <input
+            type="checkbox"
+            className="filter-checkbox__input"
+            name={name}
+            checked={checked}
+            onChange={onChange}
+            />
+            <span
+            type="button"
+            className={`filter-checkbox__switch ${checked ? 'filter-checkbox__switch_on' : ''}`}
+            ></span>
           </label>
-          <p className="search__text">Короткометражки</p>
-        </div>
+          <p className="search__text">{label}</p>
+        </form>
     );
   }
   

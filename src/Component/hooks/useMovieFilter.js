@@ -1,21 +1,28 @@
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react"
 
-export default function useMovieFilter(movies) {
-  const [filteredMovies, setFilteredMovies] = useState([]);
-  const [filteredShortMovies, setFilteredShortMovies] = useState([]);
+export default function useMoviesFilter() {
+  const [isShort, setIsShort] = useState(false);
+  const [searchString, setSearchString] = useState([]);
+  const [filtered, setFiltered] = useState([]);
+  const [filteredShort, setFilteredShort] = useState([]);
 
-  const filter = useCallback(({ searchValue }) => {
-    const resultMovies = movies.filter(item => {
-      return item.nameRU.toLowerCase().indexOf(searchValue.toLowerCase());
+  useEffect(() => {
+    setFilteredShort(filtered.filter((item) => Number(item.duration) < 40))
+  }, [filtered]);
+
+  const filter = useCallback((value, list) => {
+    setSearchString(value);
+    const filtered = list.filter((item) => {
+      return item.nameRU.toLowerCase().indexOf(value.toLowerCase()) !== -1;
     });
-    const resulShorttMovies = resultMovies.filter(item => Number(item.duration) < 40);
-    setFilteredMovies(resultMovies);
-    setFilteredShortMovies(resulShorttMovies);
-  }, [movies]);
+    setFiltered(filtered);
+  }, []);
 
   return {
-    filteredMovies,
-    filteredShortMovies,
-    filter
+    filteredList: isShort ? filteredShort : filtered,
+    filter,
+    searchString,
+    isShort,
+    setIsShort,
   }
 };

@@ -1,6 +1,6 @@
 import { React, useEffect, useState } from "react";
-import filterMovies from "../../utils/filterMovies";
-// import useMovieFilter from "../hooks/useMovieFilter";
+// import filterMovies from "../../utils/filterMovies";
+import useMovieFilter from "../hooks/useMovieFilter";
 import SearchForm from "./SearchForm/SearchForm";
 import Navigation from "../Navigation/Navigation";
 import MoviesCardList from "./MoviesCardList/MoviesCardList";
@@ -8,53 +8,47 @@ import Footer from "../Footer/Footer";
 import Preloader from "../Preloader/Preloader";
 import moviesApi from "../../utils/MoviesApi"
 
-function Movies({ loggedIn}) {
-    const [movies, setMovies] = useState([]);
-    const [isMoviesLoaded, setIsMoviesLoaded] = useState(true);
-  
-    const [searchString, setSearchString] = useState('');
-    const [shortMovies, setShortMovies] = useState(false);
-    const [filteredMovies, setFilteredMovies] = useState([]);
-  
-    useEffect(() => {
-      console.log('mounted movies');
-      const moviesFilter = JSON.parse(localStorage.getItem('movies'));
-      const shortMoviesFilter = JSON.parse(localStorage.getItem('shortMovies'));
-      const searchStringFilter = JSON.parse(localStorage.getItem('searchString'));
-      if (moviesFilter && searchStringFilter) {
-        setMovies(moviesFilter);
-        setShortMovies(shortMoviesFilter);
-        setSearchString(searchStringFilter);
-        setFilteredMovies(filterMovies(searchStringFilter, shortMoviesFilter, moviesFilter));
-      }
-    }, []);
-  
-    function handleSearch(searchValue) {
-      if (!movies.length) {
-        setIsMoviesLoaded(false);
-        moviesApi.getMovies()
-          .then(data => {
-            console.log(data);
-            localStorage.setItem('movies', JSON.stringify(data));
-            setMovies(data);
-            setFilteredMovies(filterMovies(searchValue, shortMovies, data));
-  
-          })
-          .catch(console.log)
-          .finally(() => setIsMoviesLoaded(true));
-      } else {
-        setFilteredMovies(filterMovies(searchValue, shortMovies, movies));
-      }
-      setSearchString(searchValue);
-      localStorage.setItem('searchString', JSON.stringify(searchValue));
-      localStorage.setItem('shortMovies', JSON.stringify(shortMovies));
+function Movies({ loggedIn, onSaveMovie, onRemoveMovie, myMovies }) {
+  const [movies, setMovies] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const { filter, setIsShort, filteredList, isShort, searchString } = useMovieFilter();
+
+  useEffect(() => {
+    const moviesFilter = JSON.parse(localStorage.getItem('movies'));
+    const shortMoviesFilter = JSON.parse(localStorage.getItem('shortMovies'));
+    const searchStringFilter = JSON.parse(localStorage.getItem('searchString'));
+    if (moviesFilter) {
+      setMovies(moviesFilter);
+      filter(searchStringFilter, moviesFilter)
+      setIsShort(shortMoviesFilter);
     }
-  
-    function handleChangeCheckbox() {
-      localStorage.setItem('shortMovies', JSON.stringify(!shortMovies));
-      setFilteredMovies(filterMovies(searchString, !shortMovies, movies));
-      setShortMovies(!shortMovies);
+  }, [filter, setIsShort]);
+
+  function handleSearch(searchValue) {
+    if (!movies.length) {
+      setIsLoading(true);
+      moviesApi.getMovies()
+        .then(data => {
+          setMovies(data);
+          filter(searchValue, data);
+          localStorage.setItem('movies', JSON.stringify(data));
+          searchValue = '';
+        })
+        .catch(console.log)
+        .finally(() => setIsLoading(false));
+    } else {
+      filter(searchValue, movies);
+      searchValue = '';
     }
+    localStorage.setItem('searchString', JSON.stringify(searchValue));
+  }
+
+  function handleChangeCheckbox() {
+    localStorage.setItem('shortMovies', JSON.stringify(!isShort));
+    setIsShort(!isShort);
+  }
+
   
     return (
         <div className="Movies">
@@ -62,13 +56,17 @@ function Movies({ loggedIn}) {
             <main className="main">
             <SearchForm
               searchString={searchString}
-              checkbox={shortMovies}
+              checkbox={isShort}
               onSubmit={handleSearch}
               onChangeCheckbox={handleChangeCheckbox}
             />
-            {isMoviesLoaded
-              ? <MoviesCardList movies={filteredMovies} />
-              : <Preloader />
+            {isLoading
+              ? <Preloader />
+              : <MoviesCardList
+                movies={filteredList}
+                onSaveMovie={onSaveMovie}
+                onRemoveMovie={onRemoveMovie}
+              />
             }
             </main>
             <Footer/>

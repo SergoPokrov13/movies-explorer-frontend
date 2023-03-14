@@ -15,11 +15,16 @@ function SearchForm({ searchString, checkbox, onSubmit, onChangeCheckbox }) {
     resetForm({ searchString }, {}, true)
   }, [resetForm, searchString]);
 
+  function clearForm(){
+    values.searchString = '';
+  }
+
   function handleSubmit(evt) {
     evt.preventDefault();
     if (isValid) {
       setShowErrorMessage(false);
       onSubmit(values.searchString);
+      clearForm()
     } else {
       setShowErrorMessage(true);
     }

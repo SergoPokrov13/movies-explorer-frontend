@@ -1,24 +1,41 @@
 import {React, useState} from 'react';
 import { useLocation } from "react-router-dom";
-import icon from "../../../images/icon.svg"
-import del from "../../../images/del.svg"
 
-function MoviesCard({movie}) {
-  const [cardAcive, setCardAcive] = useState(false);
+function MoviesCard({ movie, onSaveMovie, onRemoveMovie, isSaved }) {
+  const [saved, setSaved] = useState(isSaved);
   const { pathname } = useLocation();
 
+  function durationToString(duration) {
+    const hours = Math.floor(duration / 60);
+    const minuts = duration % 60;
+    return `${hours ? hours + 'ч ' : ''}${minuts}м`
+  }
+
+  function handleToggle() {
+    if (saved) {
+      onRemoveMovie(movie);
+    } else {
+      onSaveMovie(movie);
+    }
+    setSaved(!saved);
+  }
+
+  function handleRemove() {
+    onRemoveMovie(movie);
+  }
+
     return (
-          <li className="card">
-            <img className="card__image" src={`https://api.nomoreparties.co${movie.image.url}`}  alt="Карточка" onClick={()=> setCardAcive(!cardAcive)}/>
+          <div className="card">
+            <img className="card__image" src={movie.thumbnail ? movie.thumbnail : "https://api.nomoreparties.co" + movie.image.url}  alt="Карточка" />
             <div className="card__info">
               <p className="card__name">{movie.nameRU}</p>
               {pathname === '/saved-movies'
-                ? <img className="card__del" src={del} alt="Иконка" />
-                : <img className={`card__icon ${cardAcive ? 'active' : ''}`} src={icon} alt="Иконка"  />
+               ? <button className="card__remove" type="button" onClick={handleRemove} />
+               : <button className={`card__save ${saved ? 'card__save_saved' : ''}`} type="button" onClick={handleToggle} />
               }
-              <p className="card__time">{movie.duration} мин</p>
+              <p className="card__time">{durationToString(movie.duration)}</p>
             </div>
-          </li>
+          </div>
     );
   }
   

@@ -15,9 +15,11 @@ import { useEffect, useState } from 'react';
 
 function App() {
 
-  const [loggedIn, setLoggedIn] = useState(true);
+  const [loggedIn, setLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
   const [isReady, setIsReady] = useState(false);
+  const [myMovies, setMyMovies] = useState([]);
+  const [updateUserMessage, setUpdateUserMessage] = useState('');
 
   const history = useHistory();
 
@@ -32,12 +34,21 @@ function App() {
       })
       .catch(console.log)
       .finally(() => setIsReady(true));
+
+    if (loggedIn) {
+      mainApi.getMovies()
+        .then(data => {
+          setCurrentUser(data);
+          setMyMovies(data)
+        })
+        .catch(console.log);
+    }
   }, [loggedIn]);
 
   function handleRegister({ name, email, password }) {
     mainApi.signup({ name, email, password })
       .then(data => {
-        console.log(data);
+        setCurrentUser(data);
         setLoggedIn(true);
         history.push('/movies');
       })
@@ -49,8 +60,8 @@ function App() {
   function handleLogin({ email, password }) {
     mainApi.signin({ email, password })
       .then(data => {
-        console.log(data);
         setLoggedIn(true);
+        setCurrentUser(data);
         history.push('/movies');
       })
       .catch(err => {
@@ -61,7 +72,6 @@ function App() {
   function handleSignout() {
     mainApi.signout()
       .then(data => {
-        console.log(data);
         setLoggedIn(false);
         history.push('/');
       })
@@ -70,6 +80,39 @@ function App() {
       });
   }
 
+  function handleSaveMovie(movieData) {
+    mainApi.saveMovie(movieData)
+      .then(data => setMyMovies([...myMovies, data]))
+      .catch(console.log);
+    console.log('SAVE', movieData);
+  }
+
+  function handleRemoveMovie(movieData) {
+    let id;
+    if (movieData['_id']) {
+      id = movieData['_id'];
+    } else {
+      id = myMovies.find(item => item.movieId === movieData.id)['_id'];
+    }
+    console.log('REMOVE', id);
+    mainApi.removeMovie(id)
+      .then(res => {
+        setMyMovies(myMovies.filter(item => item['_id'] !== res['_id']))
+      })
+      .catch(console.log);
+  }
+
+  function handleUpdateUser(data) {
+    mainApi.updateUser(data)
+      .then(res => {
+        setCurrentUser(res);
+        setUpdateUserMessage('Данные успешно обновлены!')
+      })
+      .catch(err => {
+        console.log(err);
+        setUpdateUserMessage('Ошибка обновления данных!')
+      });
+  }
 
   return (
     <div className="App">
@@ -83,24 +126,35 @@ function App() {
         </Route>
 
         <ProtectedRoute
-              path="/movies"
-              component={Movies}
-              loggedIn={loggedIn}
+             path="/movies"
+             component={Movies}
+             loggedIn={loggedIn}
+             onSaveMovie={handleSaveMovie}
+             onRemoveMovie={handleRemoveMovie}
+             myMovies={myMovies}
             />
 
             <ProtectedRoute
               path="/saved-movies"
               component={SavedMovies}
               loggedIn={loggedIn}
+              myMovies={myMovies}
+              onRemoveMovie={handleRemoveMovie}
             />
         
         <ProtectedRoute
-            exact
-            path="/profile"
-            component={Profile}
-            loggedIn={loggedIn}
-            onSignout={handleSignout}
+              exact
+              path="/profile"
+              component={Profile}
+              loggedIn={loggedIn}
+              onSignout={handleSignout}
+              onUpdate={handleUpdateUser}
+              message={updateUserMessage}
           />
+
+           <Route exact path="/">
+              <Main loggedIn={loggedIn} />
+            </Route>
 
         <Route path="/signup">
         <Register onRegister={handleRegister} />

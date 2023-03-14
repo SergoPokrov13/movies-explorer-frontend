@@ -4,6 +4,10 @@
     height: 50px;
     justify-content: space-between;
     align-items: center;
+}
+
+.account-line{
+    width: 100%;
     border-bottom: 1px solid #424242;
 }
 
@@ -13,6 +17,3 @@
     }
  }
 
-.account__info-name:last-of-type{
-    border-bottom: none;
-}

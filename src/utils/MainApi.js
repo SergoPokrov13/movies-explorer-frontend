@@ -46,10 +46,60 @@ class MainApi {
       })
         .then(this._checkResponse);
     }
+
+    updateUser(data) {
+      return fetch(`${this._url}/users/me`, {
+        credentials: 'include',
+        method: "PATCH",
+        headers: this._headers,
+        body: JSON.stringify(data)
+      })
+        .then(this._checkResponse);
+    }
+
+    getMovies() {
+      return fetch(`${this._url}/movie`, {
+        credentials: 'include',
+        headers: this._headers
+      })
+        .then(this._checkResponse);
+    }
+  
+    removeMovie(id) {
+      return fetch(`${this._url}/movie/${id}`, {
+        credentials: 'include',
+        method: "DELETE",
+        headers: this._headers
+      })
+        .then(this._checkResponse);
+    }
+  
+    saveMovie(data) {
+      console.log(data.duration)
+      return fetch(`${this._url}/movie`, {
+        credentials: 'include',
+        method: "POST",
+        headers: this._headers,
+        body: JSON.stringify({
+          country: data.country,
+          director: data.director,
+          duration: data.duration,
+          year: data.year,
+          description: data.description,
+          image: "https://api.nomoreparties.co" + data.image.url,
+          trailerLink: data.trailerLink,
+          thumbnail: "https://api.nomoreparties.co" + data.image.url,
+          movieId: data.id,
+          nameRU: data.nameRU,
+          nameEN: data.nameEN,
+        }),
+      })
+        .then(this._checkResponse);
+    }
   }
   
   const mainApi = new MainApi({
-    url: "http://localhost:3001",
+    url: "https://sergey.diplom.work.nomoredomains.work",
     headers: {
       "Content-Type": "application/json",
     }

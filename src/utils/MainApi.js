@@ -47,7 +47,7 @@ class MainApi {
         .then(this._checkResponse);
     }
 
-    updateUserInfo(data) {
+    updateUser(data) {
       return fetch(`${this._url}/users/me`, {
         credentials: 'include',
         method: "PATCH",
@@ -99,7 +99,7 @@ class MainApi {
   }
   
   const mainApi = new MainApi({
-    url: "https://sergey.diplom.work.nomoredomains.work",
+    url: "https://sergey.diplom.work.nomoredomains.work/api",
     headers: {
       "Content-Type": "application/json",
     }

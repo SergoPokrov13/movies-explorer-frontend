@@ -23,10 +23,11 @@ function Profile({ onSignout, onUpdate, message }) {
       }
 
     return (
-        <form className="root" onSubmit={handleSubmit}>
+        <div className="root">
             <Navigation/>
+            <form className="root" onSubmit={handleSubmit}>
             <section className="account">
-                <h2 className="account__name">Привет, {currentUser.name ? currentUser.name : ''}!</h2>
+                <h2 className="account__name">Привет, {currentUser.name}!</h2>
                 <div className="account__info" >
                     <div className="account__info-name">
                         <p className="account__task">Имя</p>
@@ -70,7 +71,8 @@ function Profile({ onSignout, onUpdate, message }) {
                 >Редактировать</button>
                 <button type="button" className="edit__button-exit button" onClick={handleBtnSignout}>Выйти из аккаунта</button>
             </section>
-        </form>
+            </form>
+        </div>
     );
   }
   

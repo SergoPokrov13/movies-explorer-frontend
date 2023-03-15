@@ -13,7 +13,7 @@ function Portfolio() {
                     <p className="portfolio__web_name">Адаптивный сайт</p>
                     <img className="portfolio__web_link" src={link} alt=""/>
                 </a>
-                <a href="https://github.com/SergoPokrov13/react-mesto-api-full" target="_blank"  className="portfolio__web button">
+                <a href="http://mesto.full.sergey.nomoredomainsclub.ru/" target="_blank"  className="portfolio__web button">
                     <p className="portfolio__web_name">Одностраничное приложение</p>
                     <img className="portfolio__web_link" src={link} alt=""/>
                 </a>

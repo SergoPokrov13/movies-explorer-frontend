@@ -47,7 +47,7 @@ class MainApi {
         .then(this._checkResponse);
     }
 
-    updateUser(data) {
+    updateUserInfo(data) {
       return fetch(`${this._url}/users/me`, {
         credentials: 'include',
         method: "PATCH",

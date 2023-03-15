@@ -99,7 +99,7 @@ class MainApi {
   }
   
   const mainApi = new MainApi({
-    url: "http://localhost:3001/api",
+    url: "https://sergey.diplom.work.nomoredomains.work/api",
     headers: {
       "Content-Type": "application/json",
     }

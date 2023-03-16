@@ -42,7 +42,6 @@ function App() {
     if (loggedIn) {
       mainApi.getMovies()
         .then(data => {
-          setCurrentUser(data);
           setMyMovies(data)
         })
         .catch(console.log);

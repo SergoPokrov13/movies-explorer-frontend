@@ -45,7 +45,7 @@ function App() {
         })
         .catch(console.log);
     }
-  }, []);
+  }, [loggedIn]);
 
   function handleRegister({ name, email, password }) {
     mainApi.signup({ name, email, password })

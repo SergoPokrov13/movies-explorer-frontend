@@ -36,7 +36,9 @@ function App() {
       })
       .catch(console.log)
       .finally(() => setIsReady(true));
+  }, []);
 
+  useEffect(() => {
     if (loggedIn) {
       mainApi.getMovies()
         .then(data => {

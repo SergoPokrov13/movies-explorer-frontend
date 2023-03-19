@@ -168,11 +168,17 @@ function App() {
             </Route>
 
         <Route path="/signup">
-        <Register onRegister={handleRegister} />
+        {loggedIn
+          ? <Main login={loggedIn} />
+          : <Register onRegister={handleRegister} />
+          }
         </Route>
 
         <Route path="/signin">
-        <Login onLogin={handleLogin} />
+          {loggedIn
+          ? <Main login={loggedIn} />
+          : <Login onLogin={handleLogin} />
+          }
         </Route>
 
         <Route path="*">

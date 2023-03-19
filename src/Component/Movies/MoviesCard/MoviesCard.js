@@ -25,8 +25,8 @@ function MoviesCard({ movie, onSaveMovie, onRemoveMovie, isSaved }) {
   }
 
     return (
-          <a href={movie.trailerLink ? movie.trailerLink : ''} className="card">
-            <img className="card__image" src={movie.thumbnail ? movie.thumbnail : "https://api.nomoreparties.co" + movie.image.url}  alt="Карточка" />
+          <div className="card">
+            <a href={movie.trailerLink ? movie.trailerLink : ''}target="_blank"><img className="card__image" src={movie.thumbnail ? movie.thumbnail : "https://api.nomoreparties.co" + movie.image.url}  alt="Карточка" /></a>
             <div className="card__info">
               <p className="card__name">{movie.nameRU}</p>
               {pathname === '/saved-movies'
@@ -35,7 +35,7 @@ function MoviesCard({ movie, onSaveMovie, onRemoveMovie, isSaved }) {
               }
               <p className="card__time">{durationToString(movie.duration)}</p>
             </div>
-          </a>
+          </div>
     );
   }
   

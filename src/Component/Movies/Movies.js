@@ -8,7 +8,7 @@ import Footer from "../Footer/Footer";
 import Preloader from "../Preloader/Preloader";
 import moviesApi from "../../utils/MoviesApi"
 
-function Movies({ onSaveMovie, onRemoveMovie }) {
+function Movies({ onSaveMovie, onRemoveMovie,}) {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 

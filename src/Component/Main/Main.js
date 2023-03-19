@@ -1,5 +1,6 @@
 import React from 'react';
 import NavigationMain from "../NavigationMain/NavigationMain"
+import Navigation from '../Navigation/Navigation';
 import Promo from "./Promo/Promo";
 import Techs from "./Techs/Techs";
 import AboutProject from "./AboutProject/AboutProject"
@@ -8,10 +9,13 @@ import Portfolio from "./Portfolio/Portfolio";
 import Footer from "../Footer/Footer";
 
 
-function Main() {
+function Main({login}) {
     return (
       <div className="Main">
-        <NavigationMain/>
+        {login
+        ? <Navigation/>
+        : <NavigationMain/>
+        } 
         <Promo/>
         <main className="main">
             <AboutProject/>

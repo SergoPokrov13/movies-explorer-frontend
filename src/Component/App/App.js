@@ -133,7 +133,7 @@ function App() {
        ? <CurrentUserContext.Provider value={currentUser} >
         <Switch>
         <Route exact path="/">
-        <Main loggedIn={loggedIn} />
+        <Main login={loggedIn} />
         </Route>
 
         <ProtectedRoute

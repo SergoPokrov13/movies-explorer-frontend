@@ -32,6 +32,7 @@ function Movies({ onSaveMovie, onRemoveMovie }) {
         .then(data => {
           setMovies(data);
           filter(searchValue, data);
+          console.log("film:"+data)
           localStorage.setItem('movies', JSON.stringify(data));
           searchValue = '';
         })
@@ -63,6 +64,7 @@ function Movies({ onSaveMovie, onRemoveMovie }) {
             {isLoading
               ? <Preloader />
               : <MoviesCardList
+                searchString={searchString}
                 movies={filteredList}
                 onSaveMovie={onSaveMovie}
                 onRemoveMovie={onRemoveMovie}

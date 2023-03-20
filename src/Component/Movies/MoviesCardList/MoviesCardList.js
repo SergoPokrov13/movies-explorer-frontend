@@ -2,9 +2,8 @@ import React from 'react';
 import MoviesCard from "../MoviesCard/MoviesCard";
 import useCounterCard from "../../hooks/useCounterCard";
 
-function MoviesCardList({ movies, onSaveMovie, onRemoveMovie }) {
+function MoviesCardList({ movies, onSaveMovie, onRemoveMovie, searchString }) {
   const { count, step } = useCounterCard();
-
   function handleAnother() {
     step()
   }
@@ -21,7 +20,11 @@ function MoviesCardList({ movies, onSaveMovie, onRemoveMovie }) {
             )
           })}
         </ul>
+        : 
+        !searchString.length
+        ? <p></p>
         : <p className="card-list__info">Ничего не найдено</p>
+        
       }
         <div className="cards__block">
         {movies.length >= count

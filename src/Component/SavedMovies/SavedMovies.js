@@ -49,6 +49,7 @@ function SavedMovies({myMovies, isMoviesLoaded, onRemoveMovie}) {
               onSubmit={handleSearch}
               onChangeCheckbox={handleChangeCheckbox} />
              <MoviesCardList
+              searchString={searchString}
               movies={filteredList}
               isMoviesLoaded={isMoviesLoaded}
               onRemoveMovie={onRemoveMovie}

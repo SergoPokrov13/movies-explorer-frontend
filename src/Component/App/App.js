@@ -23,8 +23,6 @@ function App() {
 
   const history = useHistory();
 
-  console.log(loggedIn, currentUser)
-
   useEffect(() => {
     setIsReady(false);
     mainApi.getUserInfo()
@@ -65,7 +63,6 @@ function App() {
       .then(data => {
         setLoggedIn(true);
         setCurrentUser(data);
-        console.log(data);
         history.push('/movies');
         mainApi.getUserInfo()
         .then(user => {
@@ -85,6 +82,7 @@ function App() {
       .then(data => {
         setLoggedIn(false);
         history.push('/');
+        localStorage.clear();
       })
       .catch(err => {
         console.log(err)

@@ -31,8 +31,8 @@ function Movies({ onSaveMovie, onRemoveMovie }) {
       moviesApi.getMovies()
         .then(data => {
           setMovies(data);
-          filter(searchValue, data);
-          console.log("film:"+data)
+          filter('', data);
+          console.log(data)
           localStorage.setItem('movies', JSON.stringify(data));
           searchValue = '';
         })

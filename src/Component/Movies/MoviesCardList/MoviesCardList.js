@@ -13,9 +13,11 @@ function MoviesCardList({ movies, onSaveMovie, onRemoveMovie, searchString }) {
         {movies.length
         ? <ul className="cards__list">
            {movies.slice(0, count).map(movie => {
+            const saveMovies = JSON.parse(localStorage.getItem('saveMovies'))
+            const isSaved = Boolean(saveMovies.find(item => item.movieId === movie.id))
             return (
               <li key={movie.id ? movie.id : movie['_id']} className="card-list__item">
-                <MoviesCard movie={movie} onSaveMovie={onSaveMovie} onRemoveMovie={onRemoveMovie} isSaved={false} />
+                <MoviesCard movie={movie} onSaveMovie={onSaveMovie} onRemoveMovie={onRemoveMovie} isSaved={isSaved} />
               </li>
             )
           })}

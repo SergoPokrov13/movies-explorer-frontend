@@ -20,7 +20,7 @@ function SavedMovies({myMovies, isMoviesLoaded, onRemoveMovie}) {
         const shortMoviesFilter = JSON.parse(localStorage.getItem('myShortMovies'));
         const searchStringFilter = JSON.parse(localStorage.getItem('mySearchString'));
         if (searchStringFilter) {
-          filter(searchStringFilter, myMovies);
+          filter('', myMovies);
           setIsShort(shortMoviesFilter);
         } else {
           filter('', myMovies);

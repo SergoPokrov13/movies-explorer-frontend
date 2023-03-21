@@ -5,16 +5,28 @@ export function useFormValidation(initValues = {}) {
   const [errors, setErrors] = useState({});
   const [isValid, setIsValid] = useState(false);
 
+  // console.log(initValues)
+
   const handleChange = (evt) => {
     const target = evt.target;
-    const { name, type, value, checked } = target;
-    if (type === "checkbox") {
-      setValues({ ...values, [name]: checked });
-    } else {
-      setValues({ ...values, [name]: value });
+    const { name, value} = target;
+    if(initValues.name === value){
+        setValues({ ...values, [name]: value });
+        setIsValid(false);
+    }else{
+        setValues({ ...values, [name]: value });
+        setIsValid(target.closest("form").checkValidity());
     }
-    setErrors({ ...errors, [name]: target.validationMessage });
-    setIsValid(target.closest("form").checkValidity());
+
+    if(name === 'email'){
+     if(initValues.email === value){
+        setValues({ ...values, [name]: value });
+        setIsValid(false);
+    }else{
+        setValues({ ...values, [name]: value });
+        setIsValid(target.closest("form").checkValidity());
+    }
+    }
   };
 
   const resetForm = useCallback((newValues = {}, newErrors = {}, newIsValid = false) => {

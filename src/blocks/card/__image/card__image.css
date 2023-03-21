@@ -5,6 +5,12 @@
     cursor: pointer;
 }
 
+.card__link{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
 @media screen and (max-width: 800px) {
     .card__image{
         height: 190px;

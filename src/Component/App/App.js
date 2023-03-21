@@ -20,10 +20,11 @@ function App() {
   const [isReady, setIsReady] = useState(false);
   const [myMovies, setMyMovies] = useState([]);
   const [updateUserMessage, setUpdateUserMessage] = useState('');
+  const [loginUserMessage, setloginUserMessage] = useState('');
+  const [registerUserMessage, setRegisterUserMessage] = useState('');
+
 
   const history = useHistory();
-
-  console.log(loggedIn, currentUser)
 
   useEffect(() => {
     setIsReady(false);
@@ -43,6 +44,7 @@ function App() {
       mainApi.getMovies()
         .then(data => {
           setMyMovies(data)
+          localStorage.setItem('saveMovies', JSON.stringify(data));
         })
         .catch(console.log);
     }
@@ -55,9 +57,10 @@ function App() {
         setLoggedIn(true);
         history.push('/movies');
       })
-      .catch(err => {
+      .catch(function(err) {
         console.log(err)
-      });
+        setRegisterUserMessage('Пользователь с таким email уже существует')
+      })
   }
 
   function handleLogin({ email, password }) {
@@ -65,7 +68,6 @@ function App() {
       .then(data => {
         setLoggedIn(true);
         setCurrentUser(data);
-        console.log(data);
         history.push('/movies');
         mainApi.getUserInfo()
         .then(user => {
@@ -75,9 +77,10 @@ function App() {
           }
         })
       })
-      .catch(err => {
+      .catch(function(err) {
         console.log(err)
-      });
+        setloginUserMessage('Неправильная почта или пароль')
+      })
   }
 
   function handleSignout() {
@@ -85,6 +88,7 @@ function App() {
       .then(data => {
         setLoggedIn(false);
         history.push('/');
+        localStorage.clear();
       })
       .catch(err => {
         console.log(err)
@@ -93,7 +97,11 @@ function App() {
 
   function handleSaveMovie(movieData) {
     mainApi.saveMovie(movieData)
-      .then(data => setMyMovies([...myMovies, data]))
+      .then(data => {setMyMovies([...myMovies, data])
+      const saveMovie = JSON.parse(localStorage.getItem('saveMovies'))
+      saveMovie.push(data)
+      localStorage.setItem('saveMovies', JSON.stringify(saveMovie))
+  })
       .catch(console.log);
     console.log('SAVE', movieData);
   }
@@ -109,6 +117,7 @@ function App() {
     mainApi.removeMovie(id)
       .then(res => {
         setMyMovies(myMovies.filter(item => item['_id'] !== res['_id']))
+        localStorage.setItem('saveMovies', JSON.stringify(myMovies.filter(item => item['_id'] !== res['_id'])))
       })
       .catch(console.log);
   }
@@ -170,14 +179,14 @@ function App() {
         <Route path="/signup">
         {loggedIn
           ? <Main login={loggedIn} />
-          : <Register onRegister={handleRegister} />
+          : <Register onRegister={handleRegister} message={registerUserMessage}/>
           }
         </Route>
 
         <Route path="/signin">
           {loggedIn
           ? <Main login={loggedIn} />
-          : <Login onLogin={handleLogin} />
+          : <Login onLogin={handleLogin} message={loginUserMessage}/>
           }
         </Route>
 

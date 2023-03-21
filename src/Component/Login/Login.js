@@ -2,7 +2,7 @@ import {React, useState} from 'react';
 import { Link } from "react-router-dom";
 import logo from "../../images/logo.svg"
 
-function Login({onLogin}) {
+function Login({onLogin, message}) {
   const [inputsValue, setInputsValue] = useState({ email: '', password: '' });
   const [inputsValidity, setInputsValidity] = useState({ email: false, password: false });
   const [inputsErrorMessage, setInputsErrorMessage] = useState({ email: '', password: '' });
@@ -50,7 +50,7 @@ function Login({onLogin}) {
                 placeholder="Введите ваш пароль"
                 autoComplete="on"
                 />
-                <span className="register__error">{inputsErrorMessage.password}</span>
+                {message && <span className="account__error">{message}</span>}
               </div>
               <div className="register__block">
                 <button className="form__button-submit button signin" type="submit">Войти</button>

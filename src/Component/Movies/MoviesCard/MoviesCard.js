@@ -26,7 +26,7 @@ function MoviesCard({ movie, onSaveMovie, onRemoveMovie, isSaved }) {
 
     return (
           <div className="card">
-            <a href={movie.trailerLink ? movie.trailerLink : ''}target="_blank"><img className="card__image" src={movie.thumbnail ? movie.thumbnail : "https://api.nomoreparties.co" + movie.image.url}  alt="Карточка" /></a>
+            <a className='card__link' href={movie.trailerLink ? movie.trailerLink : ''} target="_blank"><img className="card__image" src={movie.thumbnail ? movie.thumbnail : "https://api.nomoreparties.co" + movie.image.url}  alt="Карточка" /></a>
             <div className="card__info">
               <p className="card__name">{movie.nameRU}</p>
               {pathname === '/saved-movies'

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useContext } from "react";
 import CurrentUserContext from "../context/CurrentUserContext";
 import Navigation from "../Navigation/Navigation";
@@ -11,6 +11,7 @@ function Profile({ onSignout, onUpdate, message }) {
       handleChange,
       isValid,
       errors,
+      setIsValid,
     } = useFormValidation({ name: currentUser.name, email: currentUser.email });
 
     function handleBtnSignout() {
@@ -20,7 +21,8 @@ function Profile({ onSignout, onUpdate, message }) {
       const handleSubmit = (evt) => {
         evt.preventDefault();
         onUpdate({ name: values.name, email: values.email });
-      }
+        setIsValid(false)
+    }
 
     return (
         <div className="root">

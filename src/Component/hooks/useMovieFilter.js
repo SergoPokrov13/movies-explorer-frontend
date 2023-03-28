@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from "react"
+import { TIMESHORTMOVIE } from "../../utils/constants";
 
 export default function useMoviesFilter() {
   const [isShort, setIsShort] = useState(false);
@@ -7,7 +8,7 @@ export default function useMoviesFilter() {
   const [filteredShort, setFilteredShort] = useState([]);
 
   useEffect(() => {
-    setFilteredShort(filtered.filter((item) => Number(item.duration) < 40))
+    setFilteredShort(filtered.filter((item) => Number(item.duration) < TIMESHORTMOVIE))
   }, [filtered]);
 
   const filter = useCallback((value, list) => {

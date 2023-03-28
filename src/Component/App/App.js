@@ -130,7 +130,11 @@ function App() {
       })
       .catch(err => {
         console.log(err);
-        setUpdateUserMessage('Ошибка обновления данных!')
+        if(err.response.status === 409){
+          setUpdateUserMessage('Указан некорректный email!')
+        }else{
+          setUpdateUserMessage('Ошибка обновления данных!')
+        }
       });
   }
 

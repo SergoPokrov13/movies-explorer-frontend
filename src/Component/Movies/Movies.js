@@ -26,23 +26,22 @@ function Movies({ onSaveMovie, onRemoveMovie,}) {
   }, [filter, setIsShort]);
 
   function handleSearch(searchValue) {
+    console.log(searchValue)
     if (!movies.length) {
       setIsLoading(true);
       moviesApi.getMovies()
         .then(data => {
           setMovies(data);
-          filter('', data);
+          filter(searchValue, data);
           console.log(data)
           localStorage.setItem('movies', JSON.stringify(data));
-          searchValue = '';
         })
         .catch(console.log)
         .finally(() => setIsLoading(false));
     } else {
       filter(searchValue, movies);
-      searchValue = '';
     }
-    localStorage.setItem('searchString', JSON.stringify(searchValue));
+    localStorage.setItem('searchString', JSON.stringify(searchValue))
   }
 
   function handleChangeCheckbox() {

@@ -1,15 +1,26 @@
 import {React, useState} from 'react';
 import { Link } from "react-router-dom";
 import logo from "../../images/logo.svg"
+const validator = require('validator');
 
 function Login({onLogin, message}) {
   const [inputsValue, setInputsValue] = useState({ email: '', password: '' });
   const [inputsValidity, setInputsValidity] = useState({ email: false, password: false });
-  const [inputsErrorMessage, setInputsErrorMessage] = useState({ email: '', password: '' });
-  function handleChange({ target: { name, value, validity, validationMessage } }) {
+  const [inputsError, setInputsEror] = useState('');
+  function handleChange({ target: { name, value, validity, } }) {
     setInputsValue(prevStat => ({ ...prevStat, [name]: value }));
-    setInputsValidity(prevStat => ({ ...prevStat, [name]: validity.valid }));
-    setInputsErrorMessage(prevStat => ({ ...prevStat, [name]: validationMessage }));
+    if(name === 'password'){
+      setInputsValidity(prevStat => ({ ...prevStat, [name]: validity.valid }));
+    }
+    
+    if(name === 'email'){
+      if(validator.isEmail(value)){
+        setInputsValidity(prevStat => ({ ...prevStat, [name]: validity.valid }));
+        setInputsEror('')
+      }else{
+        setInputsEror('Введен некорректный email')
+      }
+    }
   }
 
   function handleSubmit(evt) {
@@ -36,7 +47,7 @@ function Login({onLogin, message}) {
                 value={inputsValue.email}
                 placeholder="Введите ваш email"
                 />
-              <span className="register__error">{inputsErrorMessage.email}</span>
+              <span className="register__error">{inputsError}</span>
               </div>
               <div className="form__input-block">
                 <p className="form__input-name">Пароль</p>

@@ -1,5 +1,6 @@
 import { useCallback, useState } from "react";
 
+
 export function useFormValidation(initValues = {}) {
   const [values, setValues] = useState(initValues);
   const [errors, setErrors] = useState({});
@@ -35,5 +36,5 @@ export function useFormValidation(initValues = {}) {
     setIsValid(newIsValid);
   }, []);
 
-  return { values, handleChange, errors, isValid, resetForm };
+  return { values, handleChange, errors, isValid, resetForm, setIsValid};
 }

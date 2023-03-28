@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from "react"
+import { DESKTOPWIDTH, PADWIDTH ,MOBILEWIDTH, DESKTOPCOUNT, PADCOUNT, MOBILECOUNT, DESKTOPCOUNTSIZE, PADCOUNTSIZE, MOBILECOUNTSIZE } from "../../utils/constants";
 
 export default function useCounterCard(defaultCount) {
   const [count, setCount] = useState(defaultCount);
@@ -9,17 +10,17 @@ export default function useCounterCard(defaultCount) {
   }
 
   const handleResize = useCallback(() => {
-    if (window.innerWidth >= 1280) {
-      setCount(12);
-      setStepSize(3);
+    if (window.innerWidth >= DESKTOPWIDTH) {
+      setCount(DESKTOPCOUNT);
+      setStepSize(DESKTOPCOUNTSIZE);
     }
-    if (window.innerWidth >= 768 && window.innerWidth < 1280) {
-      setCount(8);
-      setStepSize(2);
+    if (window.innerWidth >= PADWIDTH && window.innerWidth < DESKTOPWIDTH) {
+      setCount(PADCOUNT);
+      setStepSize(PADCOUNTSIZE);
     }
-    if (window.innerWidth >= 320 && window.innerWidth < 768) {
-      setCount(4);
-      setStepSize(2);
+    if (window.innerWidth >= MOBILEWIDTH && window.innerWidth < PADWIDTH) {
+      setCount(MOBILECOUNT);
+      setStepSize(MOBILECOUNTSIZE);
     }
   }, []);
 

@@ -1,15 +1,31 @@
 import {React, useState} from 'react';
 import { Link } from "react-router-dom";
 import logo from "../../images/logo.svg"
+const validator = require('validator');
 
 function Register({ onRegister, message }) {
   const [inputsValue, setInputsValue] = useState({ name: '', email: '', password: '' });
   const [inputsValidity, setInputsValidity] = useState({ name: false, email: false, password: false });
-  const [inputsErrorMessage, setInputsErrorMessage] = useState({ name: '', email: '', password: '' });
-  function handleChange({ target: { name, value, validity, validationMessage } }) {
+  const [inputsError, setInputsEror] = useState('');
+  
+  function handleChange({ target: { name, value, validity, } }) {
     setInputsValue(prevStat => ({ ...prevStat, [name]: value }));
-    setInputsValidity(prevStat => ({ ...prevStat, [name]: validity.valid }));
-    setInputsErrorMessage(prevStat => ({ ...prevStat, [name]: validationMessage }));
+    if(name === 'name'){
+      setInputsValidity(prevStat => ({ ...prevStat, [name]: validity.valid }));
+    }
+
+    if(name === 'password'){
+      setInputsValidity(prevStat => ({ ...prevStat, [name]: validity.valid }));
+    }
+    
+    if(name === 'email'){
+      if(validator.isEmail(value)){
+        setInputsValidity(prevStat => ({ ...prevStat, [name]: validity.valid }));
+        setInputsEror('')
+      }else{
+        setInputsEror('Введен некорректный email')
+      }
+    }
   }
 
   function handleSubmit(evt) {
@@ -35,7 +51,6 @@ function Register({ onRegister, message }) {
                 value={inputsValue.name}
                 placeholder="Введите ваше имя"
                 />
-                <span className="register__error">{inputsErrorMessage.name}</span>
               </div>
               <div className="form__input-block">
                 <p className="form__input-name">E-mail</p>
@@ -48,7 +63,7 @@ function Register({ onRegister, message }) {
                 value={inputsValue.email}
                 placeholder="Введите ваш email"
                 />
-                <span className="register__error">{inputsErrorMessage.email}</span>
+                <span className="register__error">{inputsError}</span>
               </div>
               <div className="form__input-block">
                 <p className="form__input-name">Пароль</p>

@@ -29,7 +29,7 @@ function MoviesCardList({ movies, onSaveMovie, onRemoveMovie, searchString }) {
         
       }
         <div className="cards__block">
-        {movies.length >= count
+        {movies.length > count
         ? <button className="cards__button-next button" type="button" onClick={handleAnother}>Еще</button>
         : ''
       }

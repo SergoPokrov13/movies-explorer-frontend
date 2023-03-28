@@ -1,0 +1,19 @@
+.account__info-name{
+    display: flex;
+    width: 410px;
+    height: 50px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.account-line{
+    width: 100%;
+    border-bottom: 1px solid #424242;
+}
+
+@media screen and (max-width: 500px) {
+    .account__info-name{
+        width: 260px;
+    }
+ }
+

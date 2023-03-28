@@ -1,0 +1,21 @@
+.navmenu__button-glav{
+    border: none;
+    padding: 0;
+    background-color: #202020;
+    font-family: 'Inter', ‘Arial’, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 18px;
+    color: #FFFFFF;
+    margin: 0;
+    display: none;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 800px) {
+    .navmenu__button-glav{
+        font-size: 18px;
+        line-height: 22px;
+    } 
+ }

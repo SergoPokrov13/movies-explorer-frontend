@@ -1,0 +1,9 @@
+.card__del{
+    position: absolute;
+    right: 14px;
+    top: 14px;
+    width: 21px;
+    height: 21px;
+    display: block;
+    cursor: pointer;
+}

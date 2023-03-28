@@ -1,0 +1,28 @@
+.technologies__button{
+    border: none;
+    width: 90px;
+    height: 60px;
+    padding: 0;
+    background: #303030;
+    border-radius: 10px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    letter-spacing: -0.04em;
+    color: #FFFFFF;
+    margin: 0 10px 0 0;
+}
+
+.technologies__button:last-child{
+    margin: 0;
+}
+
+@media screen and (max-width: 550px) {
+    .technologies__button{
+        width: 85px;
+        margin: 0;
+    }
+ }

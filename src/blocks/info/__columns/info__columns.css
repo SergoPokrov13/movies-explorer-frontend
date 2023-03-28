@@ -1,0 +1,13 @@
+.info__columns{
+    display: flex;
+    margin: 70px 0 0;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 650px) {
+    .info__columns{
+        flex-direction: column;
+        margin: 0;
+        align-items: center;
+    }
+ }

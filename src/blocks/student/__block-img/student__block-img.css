@@ -1,0 +1,21 @@
+.student__block-img{
+    width: 270px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 770px) {
+    .student__block-img{
+        order: 1;
+        width: 255px;
+        height: 350px;
+    }
+ }
+
+@media screen and (max-width: 550px) {
+    .student__block-img{
+        order: 1;
+        width: 290px;
+        height: 350px;
+    }
+ }
